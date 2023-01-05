@@ -1,0 +1,21 @@
+<%- include('header'); %>
+<table cellpadding="0" cellspacing="0" width="100%" border="0" class="row">
+    <tbody>
+    <tr>
+        <td>
+            <div id="content">
+                <h1>Investigasi Oleh Pihak <%- data.company_name %> </h1>
+                <p style="display: inline-block; margin-right: 4px">Dear<p style="font-weight: bold; display: inline-block"><%- name %>,</p></p>
+                <br>
+                <p>Mohon maaf atas ketidaknyamanannya, namun saat ini <%- data.company_name %> sedang melakukan investigasi lebih lanjut mengenai pengajuan yang dilakukan olehmu. Harap tunggu hingga pihak <%- data.company_name %> selesai dalam proses investigasi ini.</p>
+                <br>
+                <div style="background-color: #E2E8F0; width: 100%; height: 1px"></div>
+                <br>
+                <p>Best Regards,</p>
+                <p><%- data.company_name %> Team</p>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<%- include('footer'); %>

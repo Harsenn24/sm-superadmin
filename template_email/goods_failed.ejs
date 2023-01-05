@@ -1,0 +1,80 @@
+<table cellpadding="0" cellspacing="0" width="100%" border="0" class="row">
+    <tbody>
+    <tr>
+        <td>
+            <div id="content">
+                <h1>Pengajuan Pengembalian <%- product_detail.type %> #<%- product_detail.invoice?.toUpperCase() %> oleh <%- record_data.client_name %> Ditolak</h1>
+                <p style="display: inline-block">Dear <span style="font-weight: bold"><%- name %></span>,</p>
+                <br>
+                <p>Mohon maaf atas kendala yang kamu alami. Berikut kami informasikan konfirmasi pengajuan pengembalian <%- product_detail.type %> dengan rincian:</p>
+                <br>
+                <table border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8FAFC; border-radius: 16px;">
+                    <tbody>
+                    <tr>
+                        <td width="30%" style="padding: 1rem;">No. Pesanan</td>
+                        <td width="70%" class="text-right" style="padding: 1rem;"><b><%- product_detail.payment_id %></b></td>
+                    </tr>
+                    <tr>
+                        <td width="30%" style="padding: 1rem;">Tanggal Order</td>
+                        <td width="100%" class="text-right" style="padding: 1rem;"><b><%- product_detail.order_date %></b></td>
+                    </tr>
+                    <tr>
+                        <td width="30%" style="padding: 1rem;">Metode Pembayaran</td>
+                        <td width="70%" class="text-right" style="padding: 1rem;"><b><%- product_detail.payment_method %></b></td>
+                    </tr>
+                    <tr>
+                        <td width="30%" style="padding: 1rem;">Hasil Keputusan</td>
+                        <td width="70%" class="text-right" style="padding: 1rem;"><b>Ditolak</b></td>
+                    </tr>
+                    <tr>
+                        <td width="70%" style="padding: 1rem;">
+                            <div>Alasan Pembatalan</div>
+                            <div style="font-weight: bold"><%- product_detail.reason %></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                <div style="background:none; border-bottom: 1px solid #d7dfe3; height:1px; width:100%;"></div>
+                <br>
+                <div style="font-size: 24px; font-weight: bold; margin-bottom: 8px">Detail order:</div>
+                <p style="display:inline-block;">No. Invoice: <span style="color: #B54B0F">#<%- product_detail.invoice?.toUpperCase() %></span></p>
+                <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-spacing: 24px">
+                    <tbody>
+                    <% product_detail.products.slice(0, 3).forEach((product) => { %>
+                    <tr>
+                        <td><img src="<%= product.product_image %>" alt="" style="width: 72px; height: 72px"></td>
+                        <td style="vertical-align: top">
+                            <p style="font-weight: bold; margin-bottom: 8px;"><%= product.product_name %></p>
+                            <div style="display: flex; gap: 4px; justify-items: center;">
+                                <p class="font-sm"><%= product.product_variant %></p>
+                                <p>| </p>
+                                <p class="font-sm">Qty: x<%= product.product_quantity %></p>
+                            </div>
+                        </td>
+                        <td style="font-weight: bold; color: #B54B0F; vertical-align: top">
+                            <p style="font-weight: bold" class="text-right">Rp<%= product.product_price %></p>
+                        </td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+                <% if (product_detail.products.length > 3) { %>
+                    <p style="color: #B54B0F; font-weight: 600;">
+                        +<%- (product_detail.products.length - 3) %> Lainnya
+                    </p>
+                <% } %>
+                    <br>
+                <div style="background:none; border-bottom: 1px solid #d7dfe3; height:1px; width:100%;"></div>
+                <br>
+                <div style="font-size: 24px; font-weight: bold; vertical-align: middle">Langkah selanjutnya</div>
+                <br>
+                <p>Agar kendala yang sama tidak terjadi kembali, kami imbau agar kamu dapat melampirkan bukti pendukung secara lengkap dan melakukan komunikasi dengan penjual melalui fitur chat untuk memastikan produk yang dikirim dalam keadaan baik dan menggunakan pengaman yang cukup.</p>
+                <br>
+                <p>Best Regards,</p>
+                <p><%- data.company_name %> Team</p>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>

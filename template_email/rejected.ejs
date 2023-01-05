@@ -1,0 +1,53 @@
+<%- include('header'); %>
+<table cellpadding="0" cellspacing="0" width="100%" border="0" class="row">
+    <tbody>
+    <tr>
+        <td>
+            <div id="content">
+                <h1>Verifikasi Pendaftaran Toko Ditolak</h1>
+                <p>Dear <span style="font-weight: bold"><%- data.store_name %></span></p>
+                <br>
+                <p>Toko dengan detail rincian sebagai berikut:</p>
+                <br>
+                    <table border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8FAFC; border-radius: 16px;">
+                        <tbody>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Nama Toko</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.store_name %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Email</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.email %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Nama PIC Toko</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.owner %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Nomor Telepon</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.phone_number %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">NPWP</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.npwp %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Status Verifikasi</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b>Ditolak</b></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <br>
+                <p>Mohon maaf karena pengajuan akun yang dilakukan oleh toko di tolak karena ditemukan : </p><br>
+                    <ol style="padding-left: 24px">
+                        <%- data.reason %>
+                    </ol>
+                <br>
+                <p>Best Regards,</p>
+                <p><%- data.company_name %> Team</p>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<%- include('footer'); %>

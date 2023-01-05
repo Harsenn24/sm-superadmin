@@ -1,0 +1,55 @@
+<%- include('header'); %>
+<table cellpadding="0" cellspacing="0" width="100%" border="0" class="row">
+    <tbody>
+    <tr>
+        <td>
+            <div id="content">
+                <h1>Verifikasi Pendaftaran Toko Berhasil</h1>
+                <p>Dear <span style="font-weight: bold"><%- data.store_name %></span></p>
+                <br>
+                <p>Toko dengan detail rincian sebagai berikut:</p>
+                <br>
+                    <table border="0" width="100%" cellpadding="0" cellspacing="0" style="background-color: #F8FAFC; border-radius: 16px;">
+                        <tbody>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Nama Toko</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.store_name %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Email</td>
+                            <td width="70%" class="text-right" style="padding: 1rem"><span class="font-bold text-black" style="text-decoration: none; color: black"><%- data.email %></span></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Nama PIC Toko</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.owner %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Nomor Telepon</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.phone_number %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">NPWP</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b><%- data.npwp %></b></td>
+                        </tr>
+                        <tr>
+                            <td width="30%" style="padding: 1rem;">Status Verifikasi</td>
+                            <td width="70%" class="text-right" style="padding: 1rem;"><b>Berhasil</b></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                <br>
+                <p>Selamat bergabung dengan <%- data.company_name%>! Kamu bisa langsung login dan mulai berjualan di <%- data.company_name%> .</p>
+                <div class="content-center">
+                    <a href="<%- data.domain %>/login" class="btn-primary text-decoration-none" style="color: white">
+                        Login Sekarang
+                    </a>
+                </div>
+                <br>
+                <p>Best Regards,</p>
+                <p><%- data.company_name%> Team</p>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<%- include('footer'); %>

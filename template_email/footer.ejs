@@ -1,0 +1,31 @@
+<br>
+<table cellpadding="0" cellspacing="0" width="100%" border="0" class="row">
+    <tbody>
+    <tr>
+        <td>
+            <div id="footer">
+                <p><%- data.company_name%> dengan satu sentuhan! Unduh aplikasi kami dibawah ini:</p>
+                <br>
+                <div>
+                    <a href="<%- data.google_play_link %>" target="_blank" class="text-decoration-none">
+                        <img width="108" height="32" src="<%- data.google_play_badge %>" alt="google-play">
+                    </a>
+                    <a href="<%- data.app_store_link %>" target="_blank" class="text-decoration-none">
+                        <img width="125" height="32" src="<%- data.app_store_badge %>" alt="app-store">
+                    </a>
+                </div>
+                <br>
+                <p>Jika ada pertanyaan, kamu bisa hubungi kami di email
+                    <a href="mailto:<%- data.email_sm %>" class="text-primary"><%- data.email_sm %></a>
+                </p>
+                <br>
+                <p><%- data.address %></p>
+                <br>
+                <p>© <%- data.copyright %> <%- data.company_name%></p>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
